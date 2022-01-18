@@ -50,34 +50,26 @@
         </div>
     </div>
     <script>
-        let outputScreeen = document.getElementById('screen')
-        let buttons = document.querySelectorAll('button')
+        let screen = document.getElementById('screen')
+        let allButtons = document.querySelectorAll('button')
         let screenValue = ''
-        for (items of buttons) {
+        for (items of allButtons) {
             items.addEventListener('click', (e) => {
-                buttonstext = e.target.innerText
-                // console.log('text is', buttonstext)
-                if (buttonstext == '*') {
-                    screenValue = buttonstext
-                    outputScreeen.value += screenValue
-                }
-                if (buttonstext == 'C') {
+                targetbutton = e.target.innerText
+
+                if (targetbutton == 'C') {
                     screenValue = ''
-                    outputScreeen.value = screenValue
+                    screen.value = screenValue
                 }
-                else if (buttonstext == '=') {
-                    outputScreeen.value = eval(screenValue)
+                else if (targetbutton == '=') {
+                    screen.value = eval(screenValue)
                 }
                 else {
-                    screenValue += buttonstext
-                    outputScreeen.value = screenValue
+                    screenValue += targetbutton
+                    screen.value = screenValue
                 }
             })
         }
-
-
-
-
     </script>
 </body>
 

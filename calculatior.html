@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styletwo.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Calculator</h2>
+        <input type="text" name="output" class="out" id="screen">
+
+        <div class="table">
+            <table>
+                <tr>
+                    <td><button class="same">(</button></td>
+                    <td><button class="same">)</button></td>
+                    <td><button class="same">C</button></td>
+                    <td><button class="same">AC</button></td>
+                </tr>
+                <tr>
+                    <td><button class="same">1</button></td>
+                    <td><button class="same">2</button></td>
+                    <td><button class="same">3</button></td>
+                    <td><button class="same">4</button></td>
+                </tr>
+                <tr>
+                    <td><button class="same">5</button></td>
+                    <td><button class="same">6</button></td>
+                    <td><button class="same">7</button></td>
+                    <td><button class="same">8</button></td>
+                </tr>
+                <tr>
+                    <td><button class="same">9</button></td>
+                    <td><button class="same">0</button></td>
+                    <td><button class="same" id="plus">+</button></td>
+                    <td><button class="same">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="same">/</button></td>
+                    <td><button class="same">*</button></td>
+                    <td><button class="same">%</button></td>
+                    <td><button class="same" id="dot">=</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        let outputScreeen = document.getElementById('screen')
+        let buttons = document.querySelectorAll('button')
+        let screenValue = ''
+        for (items of buttons) {
+            items.addEventListener('click', (e) => {
+                buttonstext = e.target.innerText
+                // console.log('text is', buttonstext)
+                if (buttonstext == '*') {
+                    screenValue = buttonstext
+                    outputScreeen.value += screenValue
+                }
+                if (buttonstext == 'C') {
+                    screenValue = ''
+                    outputScreeen.value = screenValue
+                }
+                else if (buttonstext == '=') {
+                    outputScreeen.value = eval(screenValue)
+                }
+                else {
+                    screenValue += buttonstext
+                    outputScreeen.value = screenValue
+                }
+            })
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,6 +1,14 @@
 body{
 	background: #fff;
 }
+a{
+	text-decoration: none;
+	color: white;
+}
+h4{
+	margin-right: 480px;
+	
+}
 .cart{
 	margin: 100px 0;
 	background-color: #F6F5FA;;
